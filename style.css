@@ -2,6 +2,11 @@ body{
     background-color: aliceblue;
 }
 
+h1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 46px;
+}
+
 .container{
     position: relative;
     width: 100%;
@@ -15,16 +20,47 @@ body{
     color:crimson;
 }
 
-h1{
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 46px;
-}
+
 
 .intro{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 20px;
+    line-height: 150%;
 }
 
 .heading{
     margin-top: 100px;
 }
+
+.book-adding{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 25px;
+    gap: 10px;
+}
+
+.input{
+    font-size: 20px;
+    display: flex;
+    width: 30%;
+}
+
+.status{
+    display: flex;
+    font-size: 20px;
+    width: 20%;
+}
+
+.status-box{
+    width: 100px;
+    padding: 5px;
+    margin: 5px;
+}
+
+.input-box{
+    width: 200px;
+    padding: 5px;
+    margin: 5px;
+}
+
+

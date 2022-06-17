@@ -13,10 +13,44 @@
         <div class="heading">
             <h1>Ebuka's Book Library</h1>
             <p class="intro">Hello how's your day going? This is a project done under 
-                <span class="Odin">The Odin Projects curriculum.</span> 
+                <span class="Odin">The Odin Projects curriculum.</span> <br>
                 Which book will you like to add/remove from the list today 
             </p>
         </div>
+
+        <form action="#">
+            <div class="book-adding">
+                <div class="input">
+                    <label for="bname">Book<br>
+                    <input type="text" id="bname" name="bname" class="input-box"required>
+                    <div id="bname-error" class="error"></div>
+                    </label>
+
+                </div>
+
+                <div class="input">
+                    <label for="author">Author<br>
+                    <input type="text" id="author" name="author" class="input-box" required>
+                    <div id="author-error" class="error"></div>
+                    </label>
+                  
+                </div>
+
+                <div class="input">
+                    <label for="pages">Pages<br>
+                    <input type="number" id="pages" name="pages" class="input-box" required>
+                    <div id="pages-error" class="error"></div>
+                    </label>
+                  
+                </div>
+
+                <div class="status">
+                    <label for="status">Status <br>
+                    <select name="status" id="status" class="status-box">
+                      <option value="read">Read</option>
+                      <option value="not read">Not read</option>
+                    </select></label>
+                </div>
 
     </div>
 
