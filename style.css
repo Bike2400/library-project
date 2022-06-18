@@ -39,6 +39,10 @@ h1{
     gap: 10px;
 }
 
+.book-add{
+    font-weight: bold;;
+}
+
 .input{
     font-size: 20px;
     display: flex;
@@ -63,4 +67,38 @@ h1{
     margin: 5px;
 }
 
+.submit{
+    border: none;
+    width: 100px;
+    height: 30px;
+    margin: 25px;
+   padding: 5px;
+    background-color: crimson;
+    border-radius: 5%;
+}
 
+.submit:hover{
+    cursor: pointer;
+}
+
+.book-heading{
+    width: 100%;
+}
+
+th{
+    font-weight: bold;
+    font-size: 20px;
+}
+th, td {
+    
+    text-align: left;
+    padding: 10px;
+  }
+
+  tr {
+    border-bottom: 1px solid #ddd;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #D6EEEE;
+  }

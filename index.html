@@ -21,7 +21,7 @@
         <form action="#">
             <div class="book-adding">
                 <div class="input">
-                    <label for="bname">Book<br>
+                    <label for="bname" class="book-add">Book<br>
                     <input type="text" id="bname" name="bname" class="input-box"required>
                     <div id="bname-error" class="error"></div>
                     </label>
@@ -29,7 +29,7 @@
                 </div>
 
                 <div class="input">
-                    <label for="author">Author<br>
+                    <label for="author" class="book-add">Author<br>
                     <input type="text" id="author" name="author" class="input-box" required>
                     <div id="author-error" class="error"></div>
                     </label>
@@ -37,7 +37,7 @@
                 </div>
 
                 <div class="input">
-                    <label for="pages">Pages<br>
+                    <label for="pages" class="book-add">Pages<br>
                     <input type="number" id="pages" name="pages" class="input-box" required>
                     <div id="pages-error" class="error"></div>
                     </label>
@@ -45,12 +45,36 @@
                 </div>
 
                 <div class="status">
-                    <label for="status">Status <br>
+                    <label for="status" class="book-add">Status <br>
                     <select name="status" id="status" class="status-box">
                       <option value="read">Read</option>
                       <option value="not read">Not read</option>
                     </select></label>
                 </div>
+
+                <div class="input">
+                    <input type="submit" value="Submit" class="submit"/>
+                  
+                </div>
+
+            </div>
+
+
+            <table class="book-heading">
+                <thead>
+                    <tr>
+                        <th>Book</th>
+                        <th>Author</th>
+                        <th>Pages</th>
+                        <th>Status</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="book-list"></tbody>
+            </table>
+
+
+                
 
     </div>
 
