@@ -73,7 +73,7 @@ h1{
     height: 30px;
     margin: 25px;
    padding: 5px;
-    background-color: crimson;
+   background-color: rgb(228, 26, 103);
     border-radius: 5%;
 }
 
@@ -83,27 +83,34 @@ h1{
 
 .book-heading{
     width: 100%;
-}
-
-th{
-    font-weight: bold;
     font-size: 20px;
-}
-th, td {
-    
-    text-align: left;
     padding: 10px;
-  }
+}
 
-  tr {
-    border-bottom: 1px solid #ddd;
+
+#book-list td{
+    border-bottom: 1px solid black;
+    padding: 10px;
+}
+.bold{
+    font-weight: bold;
+}
+  th {
+    font-weight: bold;
+    text-align: left;
+    border-bottom:black ;
   }
   
   tr:nth-child(even) {
     background-color: #D6EEEE;
   }
 
+  .status-button{
+    padding: 5px;
+  }
+
   .delete {
+    padding: 10px;
     border: none;
     background-color: rgb(228, 26, 103);
     color: white;
@@ -111,4 +118,15 @@ th, td {
   .delete:hover {
     background-color: rgb(207, 24, 94);
     color: white;
+  }
+
+  .dash-image{
+    width: 30px;
+}
+
+  @media screen and (max-width:850px) {
+    .book-adding{
+        display: flex;
+        flex-direction: column;
+    }
   }

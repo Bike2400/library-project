@@ -4,21 +4,21 @@ class Book {
     constructor(name, author, pages,status) {
       this.name = name;
       this.author = author;
-      thid.pages = pages;
+      this.pages = pages;
       this.status = status;
     }
   }
 
 const DEFAULT_DATA = [
-  { name: "The Lord of the Rings", author: "Tolkien",pages:'50', status: "read" },
+    { name: "The Lord of the Rings", author: "Tolkien", pages: "50",status: "read" },
   {
     name: "Alice in Wonderland",
     author: "Lewis Caroll",
-    pages:'50',
+    pages: "50",
     status: "not read",
   },
-  { name: "Naruto", author: "Masashi Kishimoto", pages:'50',status: "read" },
-];
+  { name: "Naruto", author: "Masashi Kishimoto",pages: "50", status: "read" },
+]
 
 const $name = document.querySelector("#bname");
 const $pages = document.querySelector("#pages");
@@ -49,6 +49,7 @@ function changeStatus(book) {
   }
 
 
+  // Used to find the correct book you want to delete from the list
   function findBook(libraryArray, name) {
     if (libraryArray.length === 0 || libraryArray === null) {
       return;
@@ -96,6 +97,28 @@ function changeStatus(book) {
       $tableBody.insertAdjacentHTML("afterbegin", htmlBook);
     });
   }
+
+  const $form = document.querySelector("form").addEventListener("submit", (e) => {
+    e.preventDefault();
+    addBookToLibrary();
+    render();
+    clearForm();
+  });
+
+  const $table = document
+  .querySelector("table")
+  .addEventListener("click", (e) => {
+    const currentTarget = e.target.parentNode.parentNode.childNodes[1];
+    if (e.target.innerHTML == "delete") {
+      if (confirm(`Wagwan do you reallly wanna delete ${currentTarget.innerText}`))
+        deleteBook(findBook(library, currentTarget.innerText));
+    }
+    if (e.target.classList.contains("status-button")) {
+      changeStatus(findBook(library, currentTarget.innerText));
+    }
+    updateLocalStorage();
+    render();
+  });
   
   render();
   
