@@ -48,3 +48,55 @@ function changeStatus(book) {
     library.splice(currentBook, currentBook + 1);
   }
 
+
+  function findBook(libraryArray, name) {
+    if (libraryArray.length === 0 || libraryArray === null) {
+      return;
+    }
+    for (book of libraryArray)
+      if (book.name === name) {
+        return libraryArray.indexOf(book);
+      }
+  }
+
+  function clearForm() {
+    $name.value = "";
+    $pages.value = "";
+    $author.value = "";
+  }
+
+  function updateLocalStorage() {
+    localStorage.setItem("library", JSON.stringify(library));
+    //library = JSON.parse(localStorage.getItem("library"));
+  }
+
+  //Displays the default set of contents if the system does not have a library
+  function checkLocalStorage() {
+    if (localStorage.getItem("library")) {
+      library = JSON.parse(localStorage.getItem("library"));
+    } else {
+      library = DEFAULT_DATA;
+    }
+  }
+  
+//Display the tables created
+  function render() {
+    checkLocalStorage();
+    $tableBody.innerHTML = "";
+    library.forEach((book) => {
+      const htmlBook = `
+        <tr>
+          <td>${book.name}</td>
+          <td>${book.author}</td>
+          <td>${book.pages}</td>
+          <td><button class="status-button">${book.status}</button></td>
+          <td><button class="delete">delete</button></td>
+        </tr>
+        `;
+      $tableBody.insertAdjacentHTML("afterbegin", htmlBook);
+    });
+  }
+  
+  render();
+  
+
